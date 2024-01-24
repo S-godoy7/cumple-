@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    background-color: #87CEEB; /* Color de fondo del cielo */
+  }
+  
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .balloons-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .balloon {
+    width: 30px;
+    height: 40px;
+    background-color: #FF69B4; /* Color del globo */
+    border-radius: 50%;
+    animation: balloon-rise 5s infinite alternate;
+  }
+  
+  .fireworks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Coloca los fuegos artificiales detrás del contenido principal */
+    background: url('fireworks.gif') center/contain no-repeat; /* Ajusta la ruta y tamaño del archivo de fuegos artificiales */
+    animation: fireworks 5s infinite alternate;
+  }
+  
+  .message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+  }
+  
+  @keyframes balloon-rise {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-80vh);
+    }
+  }
+  
+  @keyframes fireworks {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
